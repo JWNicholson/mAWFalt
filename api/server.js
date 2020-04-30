@@ -1,5 +1,5 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
+//const jwt = require('jsonwebtoken');
 const cors = require('cors');
 const helmet = require('helmet');
 
@@ -22,11 +22,11 @@ server.use('/api/userrole', userroleRouter);
 server.use('/api/secure', secureLoginRouter);
 
 server.use('/', (req, res) => { 
-  res.send("API up ...");
+  res.send("API running");
 }) ;
 
 function verifyToken(req, res, next) {
-  // token should be sent in the headeer as value to Authorization
+  // token should be sent in the header as value to Authorization
   const bearerHeader = req.headers['authorization'];
   if (typeof bearerHeader !== 'undefined') {
     const bearer = bearerHeader.split(' ');
