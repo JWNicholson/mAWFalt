@@ -22,7 +22,7 @@ server.use('/api/userrole', userroleRouter);
 server.use('/api/secure', secureLoginRouter);
 
 server.use('/', (req, res) => { 
-  res.send("API running");
+  res.json({message: 'API is running'});
 }) ;
 
 function verifyToken(req, res, next) {
